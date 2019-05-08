@@ -6,6 +6,7 @@ namespace Resto.Data
     {
         public string Name { get; set; }
         public PlaceCategory Category { get; set; }
+        public Guid CategoryId { get; set; }
     }
 
     public class PlaceCategory : Entity
@@ -14,8 +15,13 @@ namespace Resto.Data
         public string PublicCode { get; set; }
     }
 
-    public class Entity
+    public class Entity : IEntity
     {
         public Guid Id { get; set; }
+    }
+
+    public interface IEntity
+    {
+        Guid Id { get; set; }
     }
 }

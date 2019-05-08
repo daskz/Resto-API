@@ -17,6 +17,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Resto.Data;
+using Resto.Services;
+using Resto.Services.Mappers;
+using Resto.Services.Services;
+using Resto.Shared.Dtos;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Resto.API
@@ -35,8 +39,9 @@ namespace Resto.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                //options.UseInMemoryDatabase("RestoApi-db")
+                );
 
             ConfigureIdentity(services);
             ConfigureAuthentication(services);
@@ -47,7 +52,22 @@ namespace Resto.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Resto API", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = "header",
+                    Type = "apiKey"
+                });
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[] { }},
+                });
+
             });
+
+            services.AddTransient<IHangoutService, HangoutService>();
+            services.AddTransient<IMapper<HangoutPlaceDto, HangoutPlace>, HangoutPlaceMapper>();
         }
 
         private void ConfigureAuthentication(IServiceCollection services)

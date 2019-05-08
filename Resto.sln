@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resto.API", "Resto.API\Rest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resto.Data", "Resto.Data\Resto.Data.csproj", "{0EBBC13E-9C60-4A3A-A38C-FE965BB7ACBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resto.Services", "Resto.Services\Resto.Services.csproj", "{A9AEBECF-5203-4183-8905-9C17A8DA15C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resto.Shared", "Resto.Shared\Resto.Shared.csproj", "{6A8338A7-74A9-4C40-9B0D-75B9EE58D682}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0EBBC13E-9C60-4A3A-A38C-FE965BB7ACBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EBBC13E-9C60-4A3A-A38C-FE965BB7ACBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EBBC13E-9C60-4A3A-A38C-FE965BB7ACBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AEBECF-5203-4183-8905-9C17A8DA15C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AEBECF-5203-4183-8905-9C17A8DA15C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AEBECF-5203-4183-8905-9C17A8DA15C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AEBECF-5203-4183-8905-9C17A8DA15C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8338A7-74A9-4C40-9B0D-75B9EE58D682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8338A7-74A9-4C40-9B0D-75B9EE58D682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8338A7-74A9-4C40-9B0D-75B9EE58D682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8338A7-74A9-4C40-9B0D-75B9EE58D682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

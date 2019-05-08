@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Resto.API.Dtos
+namespace Resto.Shared.Dtos
 {
     public class RegisterDto
     {
