@@ -4,11 +4,12 @@ using Resto.Shared.Dtos;
 
 namespace Resto.Services.Services
 {
-    public interface IHangoutService
+    public interface ISimpleService<TDto>
+        where TDto : IDto
     {
-        IEnumerable<HangoutPlaceDto> Get();
-        HangoutPlaceDto Get(Guid id);
-        Guid Save(HangoutPlaceDto entity);
+        IEnumerable<TDto> Get();
+        TDto Get(Guid id);
+        Guid Save(TDto dto);
         void Delete(Guid id);
         bool Exists(Guid id);
     }

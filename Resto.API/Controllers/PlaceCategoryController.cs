@@ -8,12 +8,12 @@ using Resto.Shared.Dtos;
 namespace Resto.API.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
-    public class HangoutsController : ControllerBase
+    [Route("api/categories")]
+    public class PlaceCategoryController : ControllerBase
     {
-        private readonly ISimpleService<HangoutPlaceDto> _simpleService;
+        private readonly ISimpleService<PlaceCategoryDto> _simpleService;
 
-        public HangoutsController(ISimpleService<HangoutPlaceDto> simpleService)
+        public PlaceCategoryController(ISimpleService<PlaceCategoryDto> simpleService)
         {
             _simpleService = simpleService;
         }
@@ -34,14 +34,14 @@ namespace Resto.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] HangoutPlaceDto dto)
+        public IActionResult Post([FromBody] PlaceCategoryDto dto)
         {
             var id = _simpleService.Save(dto);
             return Ok(id);
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] HangoutPlaceDto dto)
+        public IActionResult Put([FromBody] PlaceCategoryDto dto)
         {
             if (!_simpleService.Exists(dto.Id))
                 return BadRequest();

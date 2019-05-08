@@ -66,8 +66,11 @@ namespace Resto.API
 
             });
 
-            services.AddTransient<IHangoutService, HangoutService>();
+            services.AddTransient<ISimpleService<HangoutPlaceDto>, HangoutPlaceService>();
+            services.AddTransient<ISimpleService<PlaceCategoryDto>, PlaceCategoryService>();
+
             services.AddTransient<IMapper<HangoutPlaceDto, HangoutPlace>, HangoutPlaceMapper>();
+            services.AddTransient<IMapper<PlaceCategoryDto, PlaceCategory>, PlaceCategoryMapper>();
         }
 
         private void ConfigureAuthentication(IServiceCollection services)

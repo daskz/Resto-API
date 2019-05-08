@@ -12,14 +12,12 @@ namespace Resto.Data
             {
                 Id = Guid.NewGuid(),
                 Name = "Бар/Паб",
-                PublicCode = "Pub"
             };
 
             var categoryCafe = new PlaceCategory
             {
                 Id = Guid.NewGuid(),
                 Name = "Кафе",
-                PublicCode = "Cafe"
             };
 
             context.PlaceCategories.AddRange(

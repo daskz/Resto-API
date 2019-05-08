@@ -8,12 +8,12 @@ using Resto.Shared.Dtos;
 
 namespace Resto.Services.Services
 {
-    public class HangoutService : IHangoutService
+    public class HangoutPlaceService : ISimpleService<HangoutPlaceDto>
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper<HangoutPlaceDto, HangoutPlace> _mapper;
 
-        public HangoutService(ApplicationDbContext context, IMapper<HangoutPlaceDto, HangoutPlace> mapper)
+        public HangoutPlaceService(ApplicationDbContext context, IMapper<HangoutPlaceDto, HangoutPlace> mapper)
         {
             _context = context;
             _mapper = mapper;

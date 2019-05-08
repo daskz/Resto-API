@@ -12,7 +12,6 @@ namespace Resto.Data
     public class PlaceCategory : Entity
     {
         public string Name { get; set; }
-        public string PublicCode { get; set; }
     }
 
     public class Entity : IEntity
